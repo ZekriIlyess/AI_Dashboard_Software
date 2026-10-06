@@ -1,0 +1,113 @@
+.container {
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  background: var(--color-bg-surface-glass);
+  padding: 1.25rem;
+  max-height: 450px;
+  overflow-y: auto;
+}
+
+.header {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: 0.5rem;
+}
+
+.empty {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  color: var(--color-text-muted);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.tableNode {
+  display: flex;
+  flex-direction: column;
+}
+
+.tableRow {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.tableRow:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.chevron {
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  margin-right: 0.25rem;
+}
+
+.tableIcon {
+  color: var(--color-primary-accent);
+  margin-right: 0.5rem;
+}
+
+.tableName {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #fff;
+  flex: 1;
+}
+
+.tableName[title] {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 3px;
+}
+
+.countBadge {
+  font-size: 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--color-text-muted);
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+}
+
+.columnsList {
+  margin-left: 2rem;
+  padding-left: 0.75rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.columnRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.15rem 0;
+}
+
+.colName {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.colType {
+  font-size: 0.7rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  color: #a78bfa;
+  padding: 0.05rem 0.3rem;
+  border-radius: 4px;
+  font-family: var(--font-family-mono);
+}

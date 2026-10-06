@@ -1,0 +1,92 @@
+# Nexus AI - Dependencies
+node_modules/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+# Python virtualenv lib dirs (do NOT ignore frontend/src/lib/)
+.venv/lib/
+venv/lib/
+ENV/lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+*.whl
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+
+# Environment variables
+.env
+.env.local
+.env.production
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# Next.js
+frontend/.next/
+frontend/out/
+frontend/node_modules/
+*.tsbuildinfo
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# Docker
+docker/data/
+docker/logs/
+
+# ML artifacts
+*.pkl
+*.joblib
+*.h5
+*.pt
+*.onnx
+/models/
+!backend/app/models/
+!frontend/src/app/(dashboard)/models/
+
+# Logs
+*.log
+logs/
+
+# OS and Temporary
+.DS_Store
+Thumbs.db
+desktop.ini
+.fuse_hidden*
+*.tmp
+local_outputs/
+
+# Secrets
+*.pem
+*.key
+*.crt
+*.p12

@@ -1,0 +1,113 @@
+/* ------------------------------------------------------------------ */
+/*   Layout – CSS Grid                                                */
+/* ------------------------------------------------------------------ */
+.bentoContainer {
+  display: grid;
+  gap: 1.5rem;
+  padding: 0;
+
+  /* Small screens → single column layout, then break to two columns on larger screens */
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-flow: dense;
+}
+
+/* The large chart card – spans 2 columns */
+.largeCard {
+  grid-column: span 2;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Small cards */
+.smallCard {
+  grid-column: span 1;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Medium cards */
+.mediumCard {
+  grid-column: span 2;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  background: rgba(17, 24, 39, 0.5);
+  color: #fff;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+  border-color: rgba(99, 102, 241, 0.3);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.cardTitle {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.cardSubtitle {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.cardContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.metricValue {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+  background: linear-gradient(135deg, #fff, #a5b4fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.metricTrend {
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-top: 0.5rem;
+}
+
+.trendUp {
+  color: #10b981;
+}
+
+.trendDown {
+  color: #ef4444;
+}
+
+/* Ensure a nice spacing on tiny screens – collapse to one column */
+@media (max-width: 768px) {
+  .bentoContainer {
+    grid-template-columns: 1fr;
+  }
+  .largeCard, .smallCard, .mediumCard {
+    grid-column: span 1;
+  }
+}

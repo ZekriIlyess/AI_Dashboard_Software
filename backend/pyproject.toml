@@ -1,0 +1,49 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "nexus-backend"
+version = "0.1.0"
+description = "FastAPI backend for Nexus AI"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi[all]>=0.110.0",
+    "sqlalchemy[asyncio]>=2.0.29",
+    "alembic>=1.13.1",
+    "asyncpg>=0.29.0",
+    "pydantic-settings>=2.2.1",
+    "passlib[bcrypt]>=1.7.4",
+    "python-jose[cryptography]>=3.3.0",
+    "redis>=5.0.3",
+    "celery>=5.3.6",
+    "aiomysql>=0.2.0",
+    "aiosqlite>=0.20.0",
+    "snowflake-connector-python>=3.8.0",
+    "google-cloud-bigquery>=3.20.0",
+    "pandas>=2.2.1",
+    "polars>=0.20.18",
+    "scikit-learn>=1.4.1",
+    "xgboost>=2.0.3",
+    "lightgbm>=4.3.0",
+    "shap>=0.45.0",
+    "prophet>=1.1.5",
+    "httpx>=0.27.0",
+    "openai>=1.14.0",
+    "nexus-types @ file:../packages/shared-types/python",
+    "nexus-connectors @ file:../packages/db-connectors",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.1.1",
+    "pytest-asyncio>=0.23.6",
+    "ruff>=0.3.5",
+    "httpx>=0.27.0",
+]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["app"]

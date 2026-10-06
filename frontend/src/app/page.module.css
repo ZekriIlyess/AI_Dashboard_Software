@@ -1,0 +1,72 @@
+.pageWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: calc(var(--nav-height) + 4rem);
+}
+
+.hero {
+  text-align: center;
+  max-width: 900px;
+  padding: 4rem 2rem;
+  margin-bottom: 4rem;
+}
+
+.hero h1 {
+  font-size: var(--text-h1);
+  margin: 0 0 1rem 0;
+  line-height: 1.1;
+  background: linear-gradient(to right, #fff, #a5b4fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subheadline {
+  font-size: var(--text-sub);
+  color: var(--color-text-muted);
+  margin: 0 0 2.5rem 0;
+  max-width: 600px;
+  margin-inline: auto;
+  line-height: 1.5;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.featuresSection {
+  width: 100%;
+  padding: 2rem 0 6rem 0;
+}
+
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.featureCard {
+  padding: 2rem;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.featureCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 40px rgba(99, 102, 241, 0.15);
+  border-color: rgba(99, 102, 241, 0.3);
+}
+
+.featureCard h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.25rem;
+  color: #fff;
+}
+
+.featureCard p {
+  margin: 0;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}

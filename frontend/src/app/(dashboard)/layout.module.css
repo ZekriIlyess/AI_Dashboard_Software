@@ -1,0 +1,244 @@
+/* ----------------------------------------------------------------------
+/* Premium Dashboard Shell & Sidebar (CSS‑Modules)
+/* ---------------------------------------------------------------------- */
+
+.dashboard {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 260px 1fr;
+  grid-template-rows: var(--nav-height) 1fr;
+  background-color: var(--color-bg-dark);
+}
+
+/* Premium Header Bar - Glassy and sleek */
+.navbar {
+  grid-column: 1 / -1;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(3, 7, 18, 0.7);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  z-index: 40;
+}
+
+.logo {
+  color: var(--color-text-main);
+  font-size: 1.35rem;
+  font-weight: 800;
+  text-decoration: none;
+  letter-spacing: -0.03em;
+  transition: opacity 0.2s ease;
+}
+
+.logo:hover {
+  opacity: 0.9;
+}
+
+.divider {
+  color: rgba(255, 255, 255, 0.15);
+  font-weight: 300;
+  font-size: 0.95rem;
+}
+
+.subtext {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.profileSection {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.userName {
+  color: var(--color-text-main);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary-accent) 0%, #8b5cf6 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Left Sidebar - vertical navigation */
+.sidebar {
+  background: rgba(10, 14, 26, 0.4);
+  backdrop-filter: blur(20px) saturate(180%);
+  border-right: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 1.75rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: auto;
+  gap: 2rem;
+}
+
+.navGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.navGroupTitle {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.3);
+  letter-spacing: 0.1em;
+  padding-left: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.sidebarLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 1rem;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  border: 1px solid transparent;
+}
+
+.sidebarLink:hover {
+  background: rgba(255, 255, 255, 0.03);
+  color: #fff;
+  transform: translateX(4px);
+}
+
+.activeLink {
+  background: rgba(99, 102, 241, 0.08) !important;
+  color: #818cf8 !important;
+  border: 1px solid rgba(99, 102, 241, 0.15);
+  box-shadow: inset 3px 0 0 #6366f1;
+}
+
+.activeChevron {
+  color: #818cf8;
+  opacity: 0.8;
+  transition: transform 0.2s ease;
+}
+
+/* Sidebar Footer & Logout Action */
+.sidebarFooter {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 1rem;
+}
+
+.logoutBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.8rem 1rem;
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--color-text-muted);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.logoutBtn:hover {
+  background: rgba(239, 68, 68, 0.06);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.1);
+}
+
+/* Main Content Area */
+.content {
+  overflow-y: auto;
+  background: var(--color-bg-dark);
+  position: relative;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+    grid-template-rows: var(--nav-height) 1fr auto;
+  }
+  
+  .sidebar {
+    grid-row: 3;
+    grid-column: 1;
+    flex-direction: row;
+    padding: 0.5rem;
+    overflow-x: auto;
+    border-right: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(10, 14, 26, 0.95);
+    z-index: 20;
+    gap: 0.5rem;
+    scrollbar-width: none;
+  }
+  
+  .sidebar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .navGroup {
+    flex-direction: row;
+    gap: 0.25rem;
+    width: 100%;
+  }
+
+  .navGroupTitle {
+    display: none;
+  }
+  
+  .sidebarLink {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+  
+  .activeLink {
+    box-shadow: none;
+    border-bottom: 2px solid #6366f1;
+    background: transparent !important;
+  }
+
+  .activeChevron {
+    display: none;
+  }
+
+  .sidebarFooter {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  .logoutBtn {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+  }
+  
+  .content {
+    grid-row: 2;
+    grid-column: 1;
+  }
+}
