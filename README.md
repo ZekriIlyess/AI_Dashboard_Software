@@ -139,9 +139,6 @@ datachat/
 | MySQL | ✅ Supported |
 | SQLite | 🚧 In progress |
 
-## License
-
-MIT — see [LICENSE](LICENSE).
 
 ---
 
